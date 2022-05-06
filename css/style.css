@@ -1,8 +1,11 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+/***********************
+        TASK 1
+***********************/
 .zav1{
     display: flex;
     justify-content: space-around;
@@ -58,4 +61,58 @@
 }
 .active{
     border: 10px double black;
+}
+/***********************
+        TASK 2
+***********************/
+.zav2{
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 320px;
+    height: 450px;
+    margin: 0 10px;
+    position: relative;
+    perspective: 1000px;
+}
+.front,.back{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/card_img.png') no-repeat;
+    backface-visibility: hidden;
+    border-radius: 30px;
+    transition: 2s;
+}
+.front{
+    background-position: -4456px -963px;
+}
+.back{
+    border: 3px solid black;
+    border-radius: 30px;
+    transform: rotateY(180deg);
+}
+.back.card_two{
+    background-position: -3768px -8px;
+}
+.back.card_three{
+    background-position:-4115px -487px;
+}
+
+.card.rotate_back .back{
+    transform: rotateY(180deg);
+}
+.card.rotate_back .front{
+    transform: rotateY(360deg);
+}
+.card.rotate_front .back{
+    transform: rotateY(0deg);
+}
+.card.rotate_front .front{
+    transform: rotateY(180deg);
 }
